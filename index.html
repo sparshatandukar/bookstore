@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="main-div">
+    <h2>Book Haven</h2>
+    <input type="text" id="search-bar" placeholder="Search for a book...">
+    <div class="button">
+    <button onclick="searchBook()" id="btn1">Search</button>
+    <button id="btn2"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0c0c0c"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg></button>
+    <button onclick="addBook()" id="btn3"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0c0c0c"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
+    <button onclick="removeBook()" id="btn4"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0c0c0c"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
+
+    </div> 
+    <hr class="divider">
+    </div>
+    <div class="genres">
+        <div class="genre-dropdown-wrapper">
+            <select id="genre-dropdown">
+                <option value="">Genres</option>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="mystery">Mystery</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="sci-fi">Science Fiction</option>
+                <option value="biography">Biography</option>
+                <option value="romance">Romance</option>
+                <option value="thriller">Thriller</option>
+                <option value="history">History</option>
+            </select>
+        </div>
+        <div class="others">
+        <ul>
+            <li><a href="#">Nepali Books</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Encyclopedias</a></li>
+            <li><a href="#">Investment Books</a></li>
+            <li><a href="#">Literature</a></li>
+            <li><a href="#">Self Development</a></li>
+            <li><a href="#">Mangas</a></li>
+            <li><a href="#">Articles </a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="best">
+    <div class="books-slider">
+        <div class="wrapper">
+            <h1 class="head"> BESTSELLERS</h1>
+            <div class="book-item">
+                <a href="#"><img src="fictionbook.png" alt=""></a>
+                <p>The Girl in His Shadows</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="fantasy.jpeg" alt=""></a>
+                <p>A Game of Thrones</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="history.jpeg" alt=""></a>
+                <p>1491</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="mystery.jpg" alt=""></a>
+                <p>The Silent Patient</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="non-fiction.jpeg" alt=""></a>
+                <p>The Diary of a Young Girl</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="non.jpg" alt=""></a>
+                <p>Diary of a Wimpy Kid</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="romance.jpg" alt=""></a>
+                <p>The Notebook</p>
+            </div>    
+        </div>
+    </div>
+</section>
+
+<section class="release">
+    <div class="second">
+        <div class="wrapper2">
+            <h1 class="head2">NEW RELEASE</h1>
+            <div class="book-item">
+                <a href="#"><img src="thriller.jpg" alt=""></a>
+                <p>When She Was Me</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="new1.jpeg" alt=""></a>
+                <p>Funny Story</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="new2.jpeg" alt=""></a>
+                <p>House of Flame and Shadow</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="new3.jpeg" alt=""></a>
+                <p>Bride</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="new4.jpeg" alt=""></a>
+                <p>The Familiar</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="new5.jpeg" alt=""></a>
+                <p>Just For The Summer</p>
+            </div>
+            <div class="book-item">
+                <a href="#"><img src="new6.jpeg" alt=""></a>
+                <p>Not in Love</p>
+            </div>
+        </div>    
+    </div>
+</section>
+
+<script>
+    function searchBook() {
+        const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+        const bookItems = document.querySelectorAll(".book-item p");
+        bookItems.forEach(bookItem => {
+            const bookText = bookItem.textContent.toLowerCase();
+            if (bookText.includes(searchTerm) && searchTerm !== "") {
+                bookItem.parentElement.style.display = ''; // Show matched book
+            } else {
+                bookItem.parentElement.style.display = 'none'; // Hide unmatched book
+            }
+        });
+    }
+
+    function addBook() {
+        const bookTitle = prompt("Enter the book title:");
+        const bookImage = prompt("Enter the book image URL:");
+        if (bookTitle && bookImage) {
+            const newBookItem = document.createElement("div");
+            newBookItem.classList.add("book-item");
+            newBookItem.innerHTML = `
+                <a href="#"><img src="${bookImage}" alt=""></a>
+                <p>${bookTitle}</p>
+            `;
+            document.querySelector(".books-slider .wrapper").appendChild(newBookItem);
+        }
+    }
+
+    function removeBook() {
+        const bookTitle = prompt("Enter the title of the book to remove:");
+        const bookItems = document.querySelectorAll(".book-item");
+        bookItems.forEach(bookItem => {
+            const title = bookItem.querySelector("p").textContent;
+            if (title === bookTitle) {
+                bookItem.remove();
+            }
+        });
+    }
+
+    function toggleFavorite(event) {
+            event.target.classList.toggle('favorite');
+        }
+
+        // Add event listeners to existing list items
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookListItems = document.querySelectorAll(".book-item").querySelector("p");
+            for (let i = 0; i < bookListItems.length; i++) {
+                bookListItems[i].addEventListener('click', toggleFavorite);
+            }
+        });
+</script>
+</body>
+</html>
